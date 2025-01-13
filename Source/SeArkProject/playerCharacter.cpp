@@ -65,5 +65,6 @@ void AplayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 void AplayerCharacter::setCameraArmLength(float length)
 {
 	SpringArmComponent->TargetArmLength = length;
+	UE_LOG(LogTemp, Warning, TEXT("%0.f"), length);
 			
 }

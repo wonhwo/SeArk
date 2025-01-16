@@ -16,10 +16,24 @@ class SEARKPROJECT_API AClickMovePlayerController : public APlayerController
 
 public:
 	AClickMovePlayerController(); //������
+
 	UPROPERTY(BlueprintReadWrite, Category = "Player")
 	bool pressKeyboardButton = true;
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	class UNiagaraSystem* NiagaraSystem;
+
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* NiagaraComp;
+
+
+	UFUNCTION()
+	void SpawnNiagara();
+
+
 protected:
+	virtual void BeginPlay() override;
+	
 	bool bClickRightMouse;
 
 	void InputRightMouseButtonPressed();
@@ -35,6 +49,7 @@ protected:
 	virtual void SetupInputComponent() override;
 
 	virtual void PlayerTick(float DeltaTime) override;
+
 
 
 };

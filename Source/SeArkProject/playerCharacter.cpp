@@ -21,7 +21,6 @@ AplayerCharacter::AplayerCharacter()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
 	bUseControllerRotationRoll = false; //캐릭터가 카메라의 회전을 따라가지 않게 false로 변경 true면 캐릭터가 카메라를 따라감
-
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 640.0f, 0.0f); //캐릭터가 바라보는 방향과 이동방향이 다를시 해당 방향으로 캐릭터가 회전하고 그 회전 속도를 설정함
 	GetCharacterMovement()->bConstrainToPlane = true; //캐릭터의 이동을 평면으로 전환
@@ -31,7 +30,7 @@ AplayerCharacter::AplayerCharacter()
 	SpringArmComponent->SetupAttachment(RootComponent);
 	SpringArmComponent->SetUsingAbsoluteRotation(true); //스프링 암의 회전이 루트 컴포넌트와 상위 컴포넌트의 회전을 따르지 않고 월드 좌표계의 회전을 따르게 함
 	SpringArmComponent->TargetArmLength = 800.0f; //카메라와 캐릭터의 거리 
-	SpringArmComponent->SetRelativeRotation(FRotator(-60.0f, 45.0f, 0.0f)); //스프링 암을 회전시켜 캐릭터를 내려다 보게함
+	SpringArmComponent->SetRelativeRotation(FRotator(-50.0f, 0.0f, 0.0f)); //스프링 암을 회전시켜 캐릭터를 내려다 보게함
 	SpringArmComponent->bDoCollisionTest = false; //카메라가 벽에 닿으면 충돌 계산을 통해 카메라와 캐릭터의 거리를 좁히는 함수 탑다운은 해당 x이므로 false
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera")); //카메라 컴포넌트 생성
@@ -43,7 +42,7 @@ AplayerCharacter::AplayerCharacter()
 void AplayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	FVector StartLocation(-1231.0f, 38.755263f, 99.15f);
+	FVector StartLocation(0.0f, 0.0f, 0.0f);
 	SetActorLocation(StartLocation);
 
 }
@@ -65,6 +64,5 @@ void AplayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 void AplayerCharacter::setCameraArmLength(float length)
 {
 	SpringArmComponent->TargetArmLength = length;
-	UE_LOG(LogTemp, Warning, TEXT("%0.f"), length);
 			
 }

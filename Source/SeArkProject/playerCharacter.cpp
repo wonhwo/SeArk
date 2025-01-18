@@ -30,7 +30,7 @@ AplayerCharacter::AplayerCharacter()
 	SpringArmComponent->SetupAttachment(RootComponent);
 	SpringArmComponent->SetUsingAbsoluteRotation(true); //스프링 암의 회전이 루트 컴포넌트와 상위 컴포넌트의 회전을 따르지 않고 월드 좌표계의 회전을 따르게 함
 	SpringArmComponent->TargetArmLength = 800.0f; //카메라와 캐릭터의 거리 
-	SpringArmComponent->SetRelativeRotation(FRotator(-50.0f, 0.0f, 0.0f)); //스프링 암을 회전시켜 캐릭터를 내려다 보게함
+	SpringArmComponent->SetRelativeRotation(FRotator(-100.0f, 0.0f, 0.0f)); //스프링 암을 회전시켜 캐릭터를 내려다 보게함
 	SpringArmComponent->bDoCollisionTest = false; //카메라가 벽에 닿으면 충돌 계산을 통해 카메라와 캐릭터의 거리를 좁히는 함수 탑다운은 해당 x이므로 false
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera")); //카메라 컴포넌트 생성
@@ -42,7 +42,8 @@ AplayerCharacter::AplayerCharacter()
 void AplayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	FVector StartLocation(0.0f, 0.0f, 0.0f);
+	FVector StartLocation(-1432.0f, 447.0f, 143.0f);
+	//(X = -1432.285866, Y = 447.066897, Z = 143.396009)
 	SetActorLocation(StartLocation);
 
 }

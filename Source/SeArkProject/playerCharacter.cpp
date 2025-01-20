@@ -42,9 +42,9 @@ AplayerCharacter::AplayerCharacter()
 void AplayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	FVector StartLocation(-1432.0f, 447.0f, 143.0f);
+	//FVector StartLocation(-1432.0f, 447.0f, 143.0f);
 	//(X = -1432.285866, Y = 447.066897, Z = 143.396009)
-	SetActorLocation(StartLocation);
+	//SetActorLocation(StartLocation);
 
 }
 

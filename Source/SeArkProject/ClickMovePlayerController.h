@@ -36,11 +36,11 @@ protected:
 	
 	bool bClickRightMouse;
 
+	UFUNCTION(BlueprintCallable)
 	void InputRightMouseButtonPressed();
-
+	UFUNCTION(BlueprintCallable)
 	void InputRightMouseButtonReleased();
 
-	void onSkillInputHandler();
 
 	void SetNewDestination(const FVector Destination);
 

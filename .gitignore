@@ -73,30 +73,3 @@ Plugins/**/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 StarterContent/
-
-Config/
-<<<<<<< HEAD
-Content/__ExternalActors__
-Content/__ExternalObjects__
-Content/Characters/
-Content/Frank_RPG_Mage/
-Content/LevelPrototyping/
-
-=======
-
-Content/
-
-ParagonAurora/
-ParagonGideon/
-ParagonGrux/
-ParagonSevarog/
->>>>>>> 300c4d6 (test)
-Fab/
-*.ini
-
-
-<<<<<<< HEAD
-2Handed_HammerSet/
-=======
-2Handed_HammerSet/
->>>>>>> 300c4d6 (test)

@@ -38,10 +38,7 @@ void AClickMovePlayerController::InputRightMouseButtonReleased()
 
 }
 
-void AClickMovePlayerController::onSkillInputHandler()
-{
-	pressKeyboardButton = false;
-}
+
 
 void AClickMovePlayerController::SetupInputComponent()
 {
@@ -49,12 +46,11 @@ void AClickMovePlayerController::SetupInputComponent()
 	InputComponent->BindAction("RightClick", IE_Pressed, this, &AClickMovePlayerController::InputRightMouseButtonPressed);
 	InputComponent->BindAction("RightClick", IE_Pressed, this, &AClickMovePlayerController::SpawnNiagara);
 	InputComponent->BindAction("RightClick", IE_Released, this, &AClickMovePlayerController::InputRightMouseButtonReleased);
-	InputComponent->BindAction("E", IE_Released, this, &AClickMovePlayerController::onSkillInputHandler);
 }
 void AClickMovePlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
-	if (bClickRightMouse && pressKeyboardButton) {
+	if (bClickRightMouse) {
 		MoveToMouseCursor();
 	}
 

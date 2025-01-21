@@ -21,8 +21,6 @@ AClickMovePlayerController::AClickMovePlayerController()
 void AClickMovePlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-
-
 }
 
 
